@@ -39,15 +39,3 @@ func read(ch chan int, wg *sync.WaitGroup) {
 		wg.Done()
 	}
 }
-
-// Result:
-// This does not work because the unbuffered channel acts
-// as though it is a full channel. Since there is nothing
-// that is reading from the channel this causes the application
-// deadlock
-//
-// From the godocs:
-// If the channel is unbuffered, the sender blocks until the receiver has received the value.
-// If the channel has a buffer, the sender blocks only until the value has been copied to the
-// buffer; if the buffer is full, this means waiting until some receiver has retrieved a value.
-// https://golang.org/doc/effective_go.html#channels

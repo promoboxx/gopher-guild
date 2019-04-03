@@ -24,6 +24,3 @@ func main() {
 		log.Printf("popped: %d", <-ch)
 	}
 }
-
-// Result:
-// Experienced results as expected
